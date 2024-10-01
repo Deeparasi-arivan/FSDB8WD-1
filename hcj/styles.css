@@ -1,0 +1,122 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7e6d5; /* Light background for a fun start */
+    color: #333;
+}
+
+.homepage {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    height: 100vh;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #2c3e50;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff4757;
+}
+
+
+.marketplace {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(45deg, #83a4d4, #b6fbff); /* Cool tones for marketplace */
+}
+
+.stalls {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.stall {
+    background-color: #ffeaa7;
+    padding: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.stall:hover {
+    background-color: #ffbe76;
+}
+
+#clue-output {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #27ae60;
+}
+.forest {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(45deg, #56ab2f, #a8e063); /* Forest green background */
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid #27ae60;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.cave {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(45deg, #0f2027, #203a43, #2c5364); /* Dark, cave-like background */
+    color: white;
+}
+
+textarea {
+    width: 80%;
+    height: 100px;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #2980b9;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#code-output {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
