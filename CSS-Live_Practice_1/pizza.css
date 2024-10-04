@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffcc00;
+    color: black
+}
+
+.party-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+.chef-task,
+.delivery-task,
+.decor-task  {
+    width: 80%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chef-task {
+background-color: #ff6161;
+}
+
+.delivery-task {
+    background-color: #28b5b5;
+    }
+
+.decor-task {
+    background-color: #8d93ab;
+    }
+
+.pizza-flex-container,
+.delivery-flex-container,
+.decor-flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.pizza-item,
+.delivery-item,
+.decor-item {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pizza-item i,
+.delivery-item i,
+.decor-ite, i {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ff5722;
+}
+
+.pizza-item {
+    color: #e91e63;
+}
+
+.delivery-item i {
+    color: blue;
+}
+
+.delivery-item {
+    color: #4caf50;
+}
+
+.decor-item {
+    color: #673ab7;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}

@@ -1,0 +1,184 @@
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #2D3142;
+  /* Dark Charcoal */
+  background-color: #F8F9FA;
+  /* Light Gray */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #1F3C88;
+  /* Deep Navy Blue */
+  color: white;
+}
+
+header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #E63946;
+  /* Muted Red */
+}
+
+/* About Me Section */
+.about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background-color: #F1FAEE;
+  /* Soft Off-White */
+  color: #2D3142;
+  /* Dark Charcoal */
+}
+
+.about-content {
+  flex-basis: 50%;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.about p span {
+  color: #E63946;
+  /* Muted Red for emphasis */
+}
+
+.about-image {
+  flex-basis: 50%;
+  text-align: center;
+}
+
+.about-image img {
+  border-radius: 10px;
+  border: 5px solid #457B9D;
+  /* Slate Blue border */
+}
+
+/* Portfolio Section */
+.portfolio {
+  background-color: #F8F9FA;
+  /* Light Gray */
+  padding: 50px;
+}
+
+.portfolio h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2D3142;
+  /* Dark Charcoal */
+  margin-bottom: 40px;
+}
+
+.portfolio .projects {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.portfolio .project {
+  width: 23%;
+  /* Manually controlling the width of each project */
+  margin: 10px 0;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 10px;
+}
+
+/* Project Colors */
+.portfolio .project:nth-child(1) {
+  background-color: #1F3C88;
+  /* Deep Navy Blue */
+}
+
+.portfolio .project:nth-child(2) {
+  background-color: #A8DADC;
+  /* Cool Light Blue */
+}
+
+.portfolio .project:nth-child(3) {
+  background-color: #457B9D;
+  /* Slate Blue */
+}
+
+.portfolio .project:nth-child(4) {
+  background-color: #E63946;
+  /* Muted Red */
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  background-color: #E63946;
+  /* Muted Red */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #1F3C88;
+  /* Deep Navy Blue on hover */
+}
