@@ -20,6 +20,11 @@ button {
     height: 100vh;
     width: 100vw;
 }
+
+.app__container {
+    height: calc(100vh - 55px);
+    display: flex;
+}
 /* STYLES */
 .header {
  background-image: linear-gradient(to left, #18A0BE, #622DB9);
@@ -27,10 +32,24 @@ button {
  display: flex;
 }
 
+/* Keyframes */
+
+@keyframes fade-in-from-top {
+    0% {
+opacity: 0;
+transform: translateY(-50px);
+    }
+    100% {
+opacity: 1;
+transform: translateY(0px);
+    }
+}
+
 .logo {
 align-self: content;
 margin-left: 20px;
 margin-right: 30px;
+animation: fade-in-from-top 0.5s;
 }
 
 .dd-toggle {
@@ -38,6 +57,7 @@ color: rgba(255, 255, 255, 0.7);
 padding: 0 13px;
 cursor: pointer;
 transition: all 0.4s;
+animation: fade-in-from-top 0.5s;
 }
 
 .dd-toggle:hover {
@@ -66,11 +86,31 @@ transition: all 0.4s;
 .dd-toggle__img {
 height: 30px;
 width: 30px;
-object-fit: cover;
 border-radius: 50%;
 margin-right: 7px;
 }
 
 .dd-toggle__icon {
 
+}
+
+/* ----------------------------------------------- */
+
+.sidebar {
+    flex: 1;
+    background-color: #10171A;
+}
+
+/* ----------------------------------------------- */
+
+.panel {
+    flex: 3;
+    background-color: #2B363C;
+}
+
+/* ----------------------------------------------- */
+
+.main {
+    flex: 12;
+    background-color: #EDF1F3;
 }
