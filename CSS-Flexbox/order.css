@@ -1,0 +1,20 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+.flex-item:nth-child(1){
+    order: 1; /* Item 1 will appear last */
+}
+
+.flex-item:nth-child(2){
+    order: 2; /* Item 1 will appear second */
+}
+
+.flex-item:nth-child(3){
+    order: 0; /* Item 1 will appear first */
+}
+body {
+    background-image: linear-gradient(to right, red , yellow);
+}
