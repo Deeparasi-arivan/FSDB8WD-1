@@ -97,20 +97,20 @@ margin-right: 7px;
 /* ----------------------------------------------- */
 
 .sidebar {
-    flex: 1;
+    width: 75px;
     background-color: #10171A;
 }
 
 /* ----------------------------------------------- */
 
 .panel {
-    flex: 3;
+    width: 350px;
     background-color: #2B363C;
 }
 
 /* ----------------------------------------------- */
 
 .main {
-    flex: 12;
+    flex: 1;
     background-color: #EDF1F3;
 }
