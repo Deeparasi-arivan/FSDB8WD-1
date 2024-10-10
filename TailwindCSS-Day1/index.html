@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample Colorful Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-blue-50 text-gray-900">
+    <header class="bg-orange-500 text-white text-center py-4">
+      <h1 class="text-4xl font-bold">Welcome to My Colorful Webpage</h1>
+    </header>
+    <main class="p-6">
+      <section class="bg-white p-6 border border-orange-500 rounded-lg mb-6">
+        <h2 class="text-3xl text-blue-600 mb-4">About This Page</h2>
+        <p class="text-lg">
+          This is a sample page designe dwith HTML and vanilla CSS
+        </p>
+      </section>
+
+      <section class="bg-white p-6 border border-orange-500 rounded-lg mb-6">
+        <h2 class="text-3xl text-blue-600 mb-4">Image Gallery</h2>
+        <div class="flex justify-around flex-wrap gap-4">
+          <img
+            class="border-4 border-yellow-400 rounded-lg w-36 h-36"
+            src="./img/1.jpg"
+            alt="Image 1"
+          />
+          <img
+            class="border-4 border-yellow-400 rounded-lg w-36 h-36"
+            src="./img/2.jpg"
+            alt="Image 2"
+          />
+          <img
+            class="border-4 border-yellow-400 rounded-lg w-36 h-36"
+            src="./img/3.jpg"
+            alt="Image 3"
+          />
+          <img
+            class="border-4 border-yellow-400 rounded-lg w-36 h-36"
+            src="./img/4.jpg"
+            alt="Image 4"
+          />
+        </div>
+      </section>
+
+      <section class="bg-white p-6 border border-orange-500 rounded-lg mb-6">
+        <h2 class="text-3xl text-blue-600 mb-4">Contact Us</h2>
+        <form class="space-y-4">
+          <input
+            class="w-full p-3 border-2 border-blue-600 rounded-md"
+            type="text"
+            placeholder="Your Name"
+          />
+          <input
+            class="w-full p-3 border-2 border-blue-600 rounded-md"
+            type="email"
+            placeholder="Your Email"
+          />
+          <textarea
+            class="w-full p-3 border-2 border-blue-600 rounded-md"
+            placeholder="Your Message"
+          ></textarea>
+          <button
+            class="w-full bg-blue-600 py-3 text-white rounded-md hover:bg-orange-500"
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      </section>
+    </main>
+    <footer class="bg-gray-800 text-white text-center py-4">
+      <p>&copy; 2023 My Colorful Webpage. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
