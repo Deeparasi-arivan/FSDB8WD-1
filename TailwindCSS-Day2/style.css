@@ -1,0 +1,33 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-areas: 
+    "header header header"
+    "aside main manikandan"
+    "footer footer footer"
+}
+header{
+    /* grid-column: left/right; */
+    grid-area: header;
+}
+main {
+    grid-area: main;
+}
+aside {
+    grid-area: aside;
+    background-color: lightblue;
+}
+footer {
+    grid-area: footer;
+}
+div {
+    grid-area: div;
+    background-color: blueviolet;
+}
+#content {
+    grid-area: manikandan;
+}
+body > * {
+    border: 4px solid lightcoral;
+}

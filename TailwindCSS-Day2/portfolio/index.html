@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Portfolio</title>
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <header class="bg-blue-600 p-4 text-white">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-3xl font-bold">My Portfolio</h1>
+        <nav>
+          <ul class="flex space-x-4">
+            <li><a href="#about" class="hover:underline">About</a></li>
+            <li><a href="#projects" class="hover:underline">Projects</a></li>
+            <li><a href="#contact" class="hover:underline">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section id="about" class="py-12 bg-white">
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-semibold mb-4">About Me</h2>
+        <p class="text-lg max-w-2xl mx-auto">
+          I am a passionate web developer, builds clean, responsive websites and
+          web applications. This portfolio shows some of my projects that i have
+          worked on.
+        </p>
+      </div>
+    </section>
+    <section id="projects" class="py-12 bg-gray-100">
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-semibold mb-8">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white shadow-lg rounded-lg p-6">
+            <img src="https://via.placeholder.com/300" alt="" />
+            <h3 class="text-2xl font-semibold mb-2">Project 1</h3>
+            <p>A simple website built using html and css</p>
+          </div>
+          <div class="bg-white shadow-lg rounded-lg p-6">
+            <img src="https://via.placeholder.com/300" alt="" />
+            <h3 class="text-2xl font-semibold mb-2">Project 2</h3>
+            <p>A JS project to showcase dynamic content</p>
+          </div>
+          <div class="bg-white shadow-lg rounded-lg p-6">
+            <img src="https://via.placeholder.com/300" alt="" />
+            <h3 class="text-2xl font-semibold mb-2">Project 3</h3>
+            <p>React application with API integration</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

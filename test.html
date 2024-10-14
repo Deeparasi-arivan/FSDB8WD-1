@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <!-- Header -->
+    <header class="bg-blue-600 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-3xl font-bold">My Portfolio</h1>
+        <nav>
+          <ul class="flex space-x-4">
+            <li><a href="#about" class="hover:underline">About</a></li>
+            <li><a href="#projects" class="hover:underline">Projects</a></li>
+            <li><a href="#contact" class="hover:underline">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 bg-white">
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-semibold mb-4">About Me</h2>
+        <p class="text-lg max-w-2xl mx-auto">
+          I am a web developer passionate about building clean, responsive
+          websites and web applications. This portfolio showcases some of the
+          projects I have worked on.
+        </p>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-12 bg-gray-100">
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-semibold mb-8">Projects</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div class="bg-white shadow-lg rounded-lg p-6">
+            <img
+              src="https://via.placeholder.com/300"
+              alt="Project 1"
+              class="rounded mb-4"
+            />
+            <h3 class="text-2xl font-semibold mb-2">Project 1</h3>
+            <p>A simple website built using HTML and CSS.</p>
+          </div>
+          <!-- Project 2 -->
+          <div class="bg-white shadow-lg rounded-lg p-6">
+            <img
+              src="https://via.placeholder.com/300"
+              alt="Project 2"
+              class="rounded mb-4"
+            />
+            <h3 class="text-2xl font-semibold mb-2">Project 2</h3>
+            <p>A JavaScript project showcasing dynamic content.</p>
+          </div>
+          <!-- Project 3 -->
+          <div class="bg-white shadow-lg rounded-lg p-6">
+            <img
+              src="https://via.placeholder.com/300"
+              alt="Project 3"
+              class="rounded mb-4"
+            />
+            <h3 class="text-2xl font-semibold mb-2">Project 3</h3>
+            <p>A React application with API integration.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 bg-white">
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-semibold mb-4">Contact Me</h2>
+        <p class="mb-8">
+          Feel free to reach out for collaborations or just a friendly hello!
+        </p>
+        <form class="max-w-lg mx-auto space-y-4">
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="w-full p-3 border border-gray-300 rounded"
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            class="w-full p-3 border border-gray-300 rounded"
+          />
+          <textarea
+            placeholder="Your Message"
+            class="w-full p-3 border border-gray-300 rounded"
+          ></textarea>
+          <button
+            class="bg-blue-600 text-white py-3 px-6 rounded hover:bg-blue-500"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white p-4 text-center">
+      <p>© 2024 My Portfolio. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
