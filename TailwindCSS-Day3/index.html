@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>South Indian Style Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .slider {
+        position: relative;
+        height: 500px;
+        overflow: hidden;
+      }
+
+      .slides {
+        display: flex;
+        width: 300%;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .slide {
+        min-width: 100%;
+        height: 500px;
+        background-size: contain;
+        background-position: center;
+      }
+
+      .slider-nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+      }
+
+      .prev,
+      .next {
+        background: rgba(255, 255, 255, 0.5);
+        border: none;
+        padding: 1rem;
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <!-- Header Section -->
+    <header class="bg-gray-800 p-4 sticky top-0 z-10">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-3xl text-yellow-400 font-bold">Vannakkam!!!</h1>
+        <nav>
+          <ul class="flex space-x-4 text-yellow-400">
+            <li><a class="hover:text-yellow-200" href="#about">About Us</a></li>
+            <li>
+              <a class="hover:text-yellow-200" href="#services">Services</a>
+            </li>
+            <li>
+              <a class="hover:text-yellow-200" href="#gallery">Gallery</a>
+            </li>
+            <li><a class="hover:text-yellow-200" href="#team">Team</a></li>
+            <li>
+              <a class="hover:text-yellow-200" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Heo Section with Slider -->
+    <section
+      class="bg-gradient-to-r from-yellow-400 to-gray-700 text-white py-20"
+    >
+      <div class="container mx-auto text-center">
+        <h2 class="text-5xl font-bold mb-4">
+          Welcome to Our South Indian styles Webpage
+        </h2>
+        <p class="text-xl mb-8">A blend of tradition and modern technology</p>
+        <!-- Image Slider -->
+        <div class="slider">
+          <div class="slides" id="slides">
+            <div class="slide" style="background-image: url('./1.jpg')"></div>
+            <div class="slide" style="background-image: url('./2.jpg')"></div>
+            <div class="slide" style="background-image: url('./3.jpg')"></div>
+          </div>
+
+          <!-- Slider navigation -->
+          <div class="slider-nav">
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+          </div>
+        </div>
+
+        <!-- Adjust Get Started button to not overlap with slider  -->
+        <div class="mt-10">
+          <a
+            href="#contact"
+            class="bg-yellow-400 text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-yellow-500"
+            >Get Started</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="py-16 bg-gray-100">
+      <div class="container mx-auto text-center">
+        <h3 class="text-3xl font-semibold text-gray-800 mb-6">About Us</h3>
+        <p class="text-lg text-gray-700">
+          We celebrate the rich South Indian heritage through modern design and
+          web technologies. Our mission is to bring the essence of culture into
+          the digital space.
+        </p>
+      </div>
+    </section>
+
+    <!-- Our Services Section with Cards -->
+    <section id="services" class="py-16 bg-gray-100">
+      <div class="container mx-auto text-center">
+        <h3 class="text-3xl font-semibold text-gray-800 mb-6">Our Services</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-white shadow-md p-6 rounded-lg hover:shadow-lg transition-shadow"
+          >
+            <img
+              src="./4.jpg"
+              alt="Web Development"
+              class="h-40 w-full object-cover mb-4 rounded-md"
+            />
+            <h4 class="text-xl font-bold text-gray-800 mb-4">
+              Web Development
+            </h4>
+            <p class="text-gray-700">
+              We build modern, responsive websites with a South Indian touch.
+            </p>
+          </div>
+          <div
+            class="bg-white shadow-md p-6 rounded-lg hover:shadow-lg transition-shadow"
+          >
+            <img
+              src="./1.jpg"
+              alt="UI/UX Design"
+              class="h-40 w-full object-cover mb-4 rounded-md"
+            />
+            <h4 class="text-xl font-bold text-gray-800 mb-4">UI/UX Design</h4>
+            <p class="text-gray-700">
+              Beautiful and functional designs inspired by traditional elements.
+            </p>
+          </div>
+          <div
+            class="bg-white shadow-md p-6 rounded-lg hover:shadow-lg transition-shadow"
+          >
+            <img
+              src="./2.jpg"
+              alt="SEO Optimization"
+              class="h-40 w-full object-cover mb-4 rounded-md"
+            />
+            <h4 class="text-xl font-bold text-gray-800 mb-4">
+              SEO Optimization
+            </h4>
+            <p class="text-gray-700">
+              Boost your website’s visibility with our expertise.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      let currentSlide = 0;
+      const slides = document.getElementById("slides");
+      const totalSlides = slides.children.length;
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlidePosition();
+      }
+
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlidePosition();
+      }
+
+      function updateSlidePosition() {
+        slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+
+      //Auto Slide every 2 seconds
+      setInterval(nextSlide, 5000);
+    </script>
+  </body>
+</html>
