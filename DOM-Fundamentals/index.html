@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="text">First Paragraph</p>
+    <p class="text">Second Paragraph</p>
+    <ul>
+      <li class="item">Item One</li>
+      <li class="item">Item Two</li>
+      <li class="item">Item Three</li>
+    </ul>
+    <script>
+      var firstParagraph = document.querySelector(".text");
+      //   firstParagraph.style.fontWeight = "bold";
+      //   firstParagraph.style.backgroundColor = "yellow";
+      console.log("QuerySelector", firstParagraph);
+
+      var items = document.querySelectorAll(".item");
+      console.log("QuerySelectorALL", items);
+      items.forEach(function (item) {
+        item.style.border = "1px solid black";
+      });
+    </script>
+  </body>
+</html>
