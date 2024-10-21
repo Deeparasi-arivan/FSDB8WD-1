@@ -52,6 +52,12 @@
           const removeButton = document.createElement("button");
           removeButton.textContent = "Remove";
           removeButton.style.marginLeft = "10px";
+          removeButton.addEventListener("mouseover", function () {
+            removeButton.style.backgroundColor = "red";
+          });
+          removeButton.addEventListener("mouseout", function () {
+            removeButton.style.backgroundColor = "initial";
+          });
           removeButton.addEventListener("click", function () {
             listItem.remove();
             paatiSays.textContent =
