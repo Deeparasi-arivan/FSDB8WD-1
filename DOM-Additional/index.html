@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="click-me">Click Me!!</button>
+    <p>You clicked the button <span id="clickcount">0</span> times!</p>
+    <p id="mouse-over">Manikandan Anbalagan</p>
+    <script>
+      let count = 0;
+      var btn = document.getElementById("click-me");
+      var span = document.getElementById("clickcount");
+      var mouseover = document.getElementById("mouse-over");
+
+      btn.addEventListener("click", function () {
+        count = count + 1;
+        span.textContent = count;
+      });
+
+      btn.addEventListener("mouseover", function () {
+        mouseover.textContent = "Mouse is over the button";
+        mouseover.style.backgroundColor = "blue";
+        mouseover.style.color = "white";
+      });
+
+      btn.addEventListener("mouseout", function () {
+        mouseover.textContent = "";
+      });
+    </script>
+  </body>
+</html>

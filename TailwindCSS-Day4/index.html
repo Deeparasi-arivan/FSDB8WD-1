@@ -63,6 +63,8 @@
       </nav>
     </header>
 
+    <butto id="btn" class="bg-yellow-400">Click Me!!!</butto>
+
     <!-- First Section with overlapping images and transparent rings -->
     <section class="relative py-20">
       <div class="container mx-auto">
@@ -107,5 +109,17 @@
         </div>
       </div>
     </section>
+    <script>
+      var btn = document.getElementById("btn");
+      btn.addEventListener("mouseover", function () {
+        btn.classList.remove("bg-yellow-400");
+        btn.classList.add("bg-red-500");
+      });
+
+      btn.addEventListener("mouseout", function () {
+        btn.classList.add("bg-yellow-400");
+        btn.classList.remove("bg-red-500");
+      });
+    </script>
   </body>
 </html>
