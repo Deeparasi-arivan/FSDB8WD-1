@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .details {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        width: 300px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+      }
+      del {
+        text-decoration: line-through;
+        background-color: chocolate;
+      }
+      ins {
+        text-decoration: underline;
+        background-color: chartreuse;
+      }
+      input[type="time"] {
+        border: 1px solid #ccc;
+        padding: 5px;
+        border-radius: 3px;
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <details class="details">
+      <hr />
+      <summary>Click to expand</summary>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+        voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Quisquam, voluptatum.
+      </p>
+      <blockquote>
+        There is <del>nothing</del> <ins>no code</ins> either good or bad, but
+        <del>thinking</del> <ins>running it</ins> makes it so.
+      </blockquote>
+      <p>
+        <samp>Keyboard not found <br />Press F1 to continue</samp>
+      </p>
+    </details>
+    <label for="appt">Choose a time for yout meeting:</label>
+    <input type="time" id="appt" name="appt" min="09:00" max="18:00" required />
+    <small>Office hours are 9am to 6pm</small>
+  </body>
+</html>
