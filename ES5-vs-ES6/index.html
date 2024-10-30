@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Concepts Explained</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+      .section {
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      h2 {
+        color: #4caf50;
+      }
+      .output {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #eee;
+        margin-top: 5px;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Section: Scoping - var vs let vs const -->
+    <div class="section">
+      <h2>1. Scoping - var vs let vs const</h2>
+      <p>
+        Using <code>var</code>, <code>let</code>, and <code>const</code> in
+        JavaScript is like organizing items in a kitchen.
+      </p>
+      <button onclick="showScopingExample()">Run Scoping Example</button>
+      <div class="output" id="scopingOutput"></div>
+    </div>
+
+    <!-- Section: Template Literals -->
+    <div class="section">
+      <h2>2. Template Literals</h2>
+      <p>
+        Creating dynamic strings is easier with <code>template literals</code>.
+      </p>
+      <button onclick="showTemplateLiteral()">
+        Run Template Literal Example
+      </button>
+      <div class="output" id="templateOutput"></div>
+    </div>
+
+    <!-- Section: Array & Object Destructuring -->
+    <div class="section">
+      <h2>3. Array & Object Destructuring</h2>
+      <p>Quickly extract values from arrays and objects using destructuring.</p>
+      <button onclick="showDestructuringExample()">
+        Run Destructuring Example
+      </button>
+      <div class="output" id="destructuringOutput"></div>
+    </div>
+
+    <!-- Section: Arrow Functions -->
+    <div class="section">
+      <h2>4. Arrow Functions</h2>
+      <p>Arrow functions provide a simpler way to write functions.</p>
+      <button onclick="showArrowFunction()">Run Arrow Function Example</button>
+      <div class="output" id="arrowOutput"></div>
+    </div>
+
+    <!-- Section: Spread & Rest Operators -->
+    <div class="section">
+      <h2>5. Spread & Rest Operators</h2>
+      <p>
+        The spread operator spreads out items, and the rest operator collects
+        items.
+      </p>
+      <button onclick="showSpreadRestExample()">
+        Run Spread & Rest Example
+      </button>
+      <div class="output" id="spreadRestOutput"></div>
+    </div>
+
+    <script>
+      // Scoping Example
+      function showScopingExample() {
+        let output = "";
+        function makeDosa() {
+          var batter = "dosa batter";
+          if (true) {
+            let pan = "iron tawa";
+            const oil = "coconut oil";
+            output += "Inside block: " + pan + ", " + oil + "<br>";
+          }
+          output += "Function scope: " + batter + "<br>";
+        }
+        makeDosa();
+        document.getElementById("scopingOutput").innerHTML = output;
+      }
+
+      // Template Literal Example
+      function showTemplateLiteral() {
+        const friendName = "Sita";
+        const age = 12;
+        const message = `Happy Birthday, ${friendName}! You are now ${age} years old!`;
+        document.getElementById("templateOutput").innerText = message;
+      }
+
+      // Destructuring Example
+      function showDestructuringExample() {
+        const meal = ["rice", "sambar", "rasam", "curd"];
+        const [main, side1, side2, dessert] = meal;
+        document.getElementById("destructuringOutput").innerHTML =
+          "Main dish: " + main + "<br> Dessert: " + dessert;
+      }
+
+      // Arrow Function Example
+      const add = (a, b) => a + b;
+      function showArrowFunction() {
+        const result = add(3, 5);
+        document.getElementById("arrowOutput").innerText = "Sum: " + result;
+      }
+
+      // Spread & Rest Example
+      function showSpreadRestExample() {
+        const ingredients = ["rice", "dal", "salt"];
+        const allIngredients = [...ingredients, "coconut", "chillies"];
+        let output = "All ingredients: " + allIngredients.join(", ") + "<br>";
+
+        function makeMeal(main, ...sideDishes) {
+          output += "Main item: " + main + "<br>";
+          output += "Side dishes: " + sideDishes.join(", ");
+        }
+        makeMeal("dosa", "sambar", "chutney", "potato curry");
+        document.getElementById("spreadRestOutput").innerHTML = output;
+      }
+    </script>
+  </body>
+</html>
