@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media Posts</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: #f0f2f5;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 0 15px;
+      }
+
+      .post {
+        background-color: white;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      .post-header {
+        padding: 12px;
+        display: flex;
+        align-items: center;
+      }
+
+      .post-header img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+
+      .user-info {
+        flex-grow: 1;
+      }
+
+      .user-name {
+        font-weight: bold;
+        color: #1c1e21;
+      }
+
+      .post-time {
+        font-size: 12px;
+        color: #65676b;
+      }
+
+      .post-content {
+        padding: 0 12px 12px;
+      }
+
+      .post-image {
+        width: 100%;
+        max-height: 500px;
+        object-fit: cover;
+        margin: 12px 0;
+      }
+
+      .post-actions {
+        padding: 12px;
+        border-top: 1px solid #e4e6eb;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .action-button {
+        border: none;
+        background: none;
+        color: #65676b;
+        font-size: 14px;
+        cursor: pointer;
+        padding: 6px 12px;
+      }
+
+      .action-button:hover {
+        background-color: #f0f2f5;
+        border-radius: 4px;
+      }
+
+      .comments-section {
+        padding: 12px;
+        border-top: 1px solid #e4e6eb;
+      }
+
+      .comment {
+        display: flex;
+        margin-bottom: 12px;
+      }
+
+      .comment img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin-right: 8px;
+      }
+
+      .comment-content {
+        background-color: #f0f2f5;
+        padding: 8px 12px;
+        border-radius: 18px;
+        flex-grow: 1;
+      }
+
+      .comment-user {
+        font-weight: bold;
+        margin-right: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="posts-container"></div>
+
+    <script>
+      async function fetchRandomUsers(count) {
+        const response = await fetch(
+          `https://randomuser.me/api/?results=${count}`
+        );
+        const data = await response.json();
+        return data.results;
+      }
+
+      async function fetchPosts() {
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/posts"
+        );
+        const posts = await response.json();
+        return posts.slice(0, 50); // Get first 5 posts
+      }
+
+      async function fetchComments(postId) {
+        const response = await fetch(
+          `https://jsonplaceholder.typicode.com/posts/${postId}/comments`
+        );
+        return await response.json();
+      }
+
+      function getRandomImage(index) {
+        return `https://picsum.photos/seed/${index}/600/400`;
+      }
+
+      function formatTimeAgo() {
+        const times = [
+          "2 hours ago",
+          "5 hours ago",
+          "12 hours ago",
+          "1 day ago",
+          "2 days ago",
+        ];
+        return times[Math.floor(Math.random() * times.length)];
+      }
+
+      async function createPosts() {
+        const container = document.getElementById("posts-container");
+        const posts = await fetchPosts();
+        const users = await fetchRandomUsers(20); // Get 20 random users for posts and comments
+
+        for (let i = 0; i < posts.length; i++) {
+          const post = posts[i];
+          const postUser = users[i];
+          const comments = await fetchComments(post.id);
+
+          const postElement = document.createElement("div");
+          postElement.className = "post";
+          postElement.innerHTML = `
+                    <div class="post-header">
+                        <img src="${postUser.picture.medium}" alt="User">
+                        <div class="user-info">
+                            <div class="user-name">${postUser.name.first} ${
+            postUser.name.last
+          }</div>
+                            <div class="post-time">${formatTimeAgo()}</div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p>${post.body}</p>
+                        <img src="${getRandomImage(
+                          i
+                        )}" class="post-image" alt="Post image">
+                    </div>
+                    <div class="post-actions">
+                        <button class="action-button">Like</button>
+                        <button class="action-button">Comment</button>
+                        <button class="action-button">Share</button>
+                    </div>
+                    <div class="comments-section">
+                        ${comments
+                          .slice(0, 3)
+                          .map(
+                            (comment, index) => `
+                            <div class="comment">
+                                <img src="${
+                                  users[i + index + 1].picture.medium
+                                }" alt="Commenter">
+                                <div class="comment-content">
+                                    <span class="comment-user">${
+                                      users[i + index + 1].name.first
+                                    }</span>
+                                    ${comment.body}
+                                </div>
+                            </div>
+                        `
+                          )
+                          .join("")}
+                    </div>
+                `;
+          container.appendChild(postElement);
+        }
+      }
+
+      createPosts();
+    </script>
+  </body>
+</html>
