@@ -5,6 +5,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 import ProductList from './components/ProductList'
 import CartModal from './components/CartModal'
+import Village from './components/Village'
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -24,13 +25,14 @@ function App() {
 
   return (
     <div className='bg-gray-200 min-h-screen'>
-      <Navbar cartCount={cartItems.length} openCart={openCart} />
+      <Village />
+      {/* <Navbar cartCount={cartItems.length} openCart={openCart} />
       <ProductList cartItems={cartItems} setCartItems={setCartItems} />
       {
         isCartOpen && (
           <CartModal cartItems={cartItems} closeCart={closeCart} removeFromCart={removeFromCart} />
         )
-      }
+      } */}
     </div>
   )
 }
