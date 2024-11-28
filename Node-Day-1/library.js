@@ -1,8 +1,6 @@
 const fs = require("fs"); //fs is a module of node
 const path = require("path"); //path is a module of node
 
-const chalk = require("chalk"); //chalk is a module of node
-
 // Folder for storing our new books
 const libraryPath = path.join(__dirname, "library"); //__dirname is a global variable in node
 
