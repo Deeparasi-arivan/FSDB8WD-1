@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const connectDB = require("./config/dbConfig");
-const taskRoutes = require("./routes/taskRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 require("dotenv").config();
 
@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 connectDB();
 
 // Routes
-app.use("/api/tasks", taskRoutes);
+app.use("/api/users", authRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
