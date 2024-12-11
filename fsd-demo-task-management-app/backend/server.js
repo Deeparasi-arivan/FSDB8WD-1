@@ -4,6 +4,8 @@ const connectDB = require("./config/db");
 const cors = require("cors");
 const authRoutes = require("./routes/authRoutes");
 const taskRoutes = require("./routes/taskRoutes");
+const notificationRoutes = require("./routes/notificationRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 require("dotenv").config();
 
@@ -24,6 +26,8 @@ app.get("/", (req, res) => {
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
+app.use("/api/notifications", notificationRoutes);
+app.use("/api/users", userRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
