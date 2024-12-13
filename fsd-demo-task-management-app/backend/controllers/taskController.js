@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const Task = require("../models/Task");
 
 // Get All Tasks
@@ -72,10 +73,43 @@ const deleteTask = async (req, res) => {
   }
 };
 
+// Get Task Stats
+const getTaskStats = async (req, res) => {
+  try {
+    const userId = new mongoose.Types.ObjectId(req.user.userId);
+    const stats = await Task.aggregate([
+      {
+        $match: {
+          createdBy: userId,
+        },
+      },
+      {
+        $group: {
+          _id: "$status",
+          count: { $sum: 1 },
+        },
+      },
+    ]);
+    const result = {
+      pending: 0,
+      inProgress: 0,
+      completed: 0,
+    };
+    stats.forEach((stat) => {
+      result[stat._id] = stat.count;
+    });
+    console.log(result, " $%$%$%$%$%");
+    res.status(200).json(result);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
 module.exports = {
   getAllTasks,
   createTask,
   updateTask,
   deleteTask,
   gettTaskById,
+  getTaskStats,
 };
